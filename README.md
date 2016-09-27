@@ -6,7 +6,8 @@ Separate pure and inpure functions in JavaScript.
 
 ### Usage
 
-Just include `lib/io-square-browser.js` in your script tag.
+Just include `lib/io-square-browser.js` in your script tag. Global `IO` is available in
+ypur JS.
 
 ### Example
 
@@ -65,3 +66,33 @@ IO.change(emailInput)
 
 
 ```
+
+### Available methods
+
+    IO.click(DOMElement)
+
+Returns an IO object for the `click` Event. Methods of the IO Object will be called with the Event Object.
+
+    IO.change(DOMElement)
+
+Returns an IO object for the `change` Event. Methods of the IO Object will be called with `event.target.value`.
+
+    ioObject.error(error -> DoSomething)
+
+To stop propagation on IO Error use `error`. The error handler is called when the IO Event results in an instance of `Error` rather tha a value.
+
+    ioObject.reject(val -> null or Val)
+
+To stop propagation of the value use `reject`.
+
+    ioObject.map(val -> NewVal)
+
+To covert the propagated value to a new value, use `map`.
+
+    ioObject.bind(val -> new IOObject)
+
+Bind the current IO Object to a new IO Object. After the bind the valued propagated the value of the original IOObject and the new IOObject.
+
+    ioObject.the(val -> Finally do something)
+
+`then` must be the final call. The function passed to `then` will not return anything.
