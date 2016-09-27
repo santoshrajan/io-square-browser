@@ -111,7 +111,7 @@ To convert the propagated value to a new value, use `map`.
 
     ioObject.bind(val -> new IOObject)
 
-Bind the current IO Object to a new IO Object. After the bind the valued propagated the value of the original IOObject and the new IOObject.
+Bind the current IO Object to a new IO Object. After the bind, the values propagated are the value of the original IOObject, and the new IOObject.
 
     ioObject.then(val -> Finally do something)
 
