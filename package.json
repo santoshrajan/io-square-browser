@@ -1,6 +1,6 @@
 {
   "name": "io-square-browser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "IO Monad for browser javascript.",
   "main": "lib/io-square-browser.js",
   "scripts": {
