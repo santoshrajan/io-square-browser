@@ -69,6 +69,8 @@ IO.change(emailInput)
 
 ### Available methods
 
+#### Static Methods for creating IO Objects
+
     IO.click(DOMElement)
 
 Returns an IO object for the `click` Event. Methods of the IO Object will be called with the Event Object.
@@ -76,6 +78,20 @@ Returns an IO object for the `click` Event. Methods of the IO Object will be cal
     IO.change(DOMElement)
 
 Returns an IO object for the `change` Event. Methods of the IO Object will be called with `event.target.value`.
+
+    IO.get(url)
+
+Returns an IO object for the get request. The value propagated is `responseText`.
+
+    IO.getJSON(url)
+
+Returns an IO object for the get request. The value propagated is JavaScript Object.
+
+    IO.getBlob(url)
+
+Returns an IO object for the get request. The value propagated is JavaScript Blob Object.
+
+#### Instance methods on IO Objects
 
     ioObject.error(error -> DoSomething)
 
@@ -87,12 +103,12 @@ To stop propagation of the value use `reject`.
 
     ioObject.map(val -> NewVal)
 
-To covert the propagated value to a new value, use `map`.
+To convert the propagated value to a new value, use `map`.
 
     ioObject.bind(val -> new IOObject)
 
 Bind the current IO Object to a new IO Object. After the bind the valued propagated the value of the original IOObject and the new IOObject.
 
-    ioObject.the(val -> Finally do something)
+    ioObject.then(val -> Finally do something)
 
 `then` must be the final call. The function passed to `then` will not return anything.
