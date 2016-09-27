@@ -2,7 +2,6 @@ import IO from 'io-square'
 
 const createRequest = (method, url, cb) => {
   const request = new window.XMLHttpRequest()
-  request.open(method, url)
   request.addEventListener('load', () => {
     if (request.status === 200) {
       cb(request)
@@ -13,6 +12,7 @@ const createRequest = (method, url, cb) => {
   request.addEventListener('timeout', () => cb(new Error('Request timed out')))
   request.addEventListener('abort', () => cb(new Error('Request aborted')))
   request.addEventListener('error', () => cb(new Error('Request failed')))
+  request.open(method, url)
   return request
 }
 
@@ -39,6 +39,24 @@ class IOBrowser extends IO {
       request.responseType = 'blob'
       request.send()
     }).map(request => new window.Blob([request.response]))
+  }
+
+  static postJSON (url, obj) {
+    return new IO(cb => {
+      const request = createRequest('POST', url, cb)
+      request.setRequestHeader('Content-Type', 'application/json')
+      request.responseType = 'json'
+      request.send(JSON.stringify(obj))
+    }).map(request => request.response)
+  }
+
+  static click (elem) {
+    return new IO(cb => elem.addEventListener('click', cb))
+  }
+
+  static change (elem) {
+    return new IO(cb => elem.addEventListener('change', cb))
+      .map(e => e.target.value)
   }
 
 }
