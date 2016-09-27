@@ -30,7 +30,7 @@ class IOBrowser extends IO {
       const request = createRequest('GET', url, cb)
       request.responseType = 'json'
       request.send()
-    }).map(request => request.response)
+    }).map(request => [request.response])
   }
 
   static getBlob (url) {
@@ -47,7 +47,7 @@ class IOBrowser extends IO {
       request.setRequestHeader('Content-Type', 'application/json')
       request.responseType = 'json'
       request.send(JSON.stringify(obj))
-    }).map(request => request.response)
+    }).map(request => [request.response])
   }
 
   static click (elem) {
