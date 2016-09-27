@@ -2,7 +2,7 @@
 
 ## IO Monad for browser JavaScript
 
-Separate pure and inpure functions in JavaScript.
+Separate pure and impure functions in JavaScript.
 
 ### Usage
 
@@ -12,9 +12,9 @@ your JS.
 ### Example
 
 ```javascript
-/* 
+/*
    Problem:
-   Validate Email entered but user. Post valid email as JSON to server.
+   Validate Email entered by user. Post valid email as JSON to server.
    Handle network error. Verify response from server. Do next ...
 */
 
@@ -50,7 +50,7 @@ const verifyEmailResponse = (email, resp) => {
 
 // This is the main IO Object created.
 // Listens to the change event of the email input element.
-// Calls verify email and rects if invalid email
+// Calls verify email and rejects if invalid email
 // Binds this IO to another IO object returned by postEmail.
 // Rejects if verifyEmailRespons returns null
 // Finally always call 'then' to actvate the IO Object
