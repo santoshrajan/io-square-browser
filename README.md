@@ -123,5 +123,5 @@ If you want to propagate more than one value, just return an Array of values fro
 
 #### Create your own IO Objects
 
-To create your own IO Objects, follow (IO-Square)[https://github.com/santoshrajan/io-square]
+To create your own IO Objects, follow [IO-Square](https://github.com/santoshrajan/io-square)
 
