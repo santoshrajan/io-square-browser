@@ -91,6 +91,10 @@ Returns an IO object for the get request. The value propagated is JavaScript Obj
 
 Returns an IO object for the get request. The value propagated is JavaScript Blob Object.
 
+    IO.postJSON(url, obj)
+
+Returns an IO object for the post request. The value propagated is JavaScript Object.
+
 #### Instance methods on IO Objects
 
     ioObject.error(error -> DoSomething)
