@@ -7,7 +7,7 @@ Separate pure and inpure functions in JavaScript.
 ### Usage
 
 Just include `lib/io-square-browser.js` in your script tag. Global `IO` is available in
-ypur JS.
+your JS.
 
 ### Example
 
