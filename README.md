@@ -116,3 +116,9 @@ Bind the current IO Object to a new IO Object. After the bind, the values propag
     ioObject.then(val -> Finally do something)
 
 `then` must be the final call. The function passed to `then` will not return anything.
+
+#### Note:
+
+If you want to propagate more than one value, just return ans Array of values from your pure function. The next pure function called will be called with multiple arguments.
+
+
