@@ -119,6 +119,9 @@ Bind the current IO Object to a new IO Object. After the bind, the values propag
 
 #### Note:
 
-If you want to propagate more than one value, just return ans Array of values from your pure function. The next pure function called will be called with multiple arguments.
+If you want to propagate more than one value, just return an Array of values from your pure function. The next pure function called will be called with multiple arguments.
 
+#### Create your own IO Objects
+
+To create your own IO Objects, follow (IO-Square)[https://github.com/santoshrajan/io-square]
 
