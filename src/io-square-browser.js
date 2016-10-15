@@ -25,6 +25,13 @@ class IOBrowser extends IO {
     }).map(request => request.responseText)
   }
 
+  static del (url) {
+    return new IO(cb => {
+      const request = createRequest('DELETE', url, cb)
+      request.send()
+    }).map(request => request.responseText)
+  }
+
   static getJSON (url) {
     return new IO(cb => {
       const request = createRequest('GET', url, cb)
@@ -44,6 +51,15 @@ class IOBrowser extends IO {
   static postJSON (url, obj) {
     return new IO(cb => {
       const request = createRequest('POST', url, cb)
+      request.setRequestHeader('Content-Type', 'application/json')
+      request.responseType = 'json'
+      request.send(JSON.stringify(obj))
+    }).map(request => [request.response])
+  }
+
+  static putJSON (url, obj) {
+    return new IO(cb => {
+      const request = createRequest('PUT', url, cb)
       request.setRequestHeader('Content-Type', 'application/json')
       request.responseType = 'json'
       request.send(JSON.stringify(obj))
