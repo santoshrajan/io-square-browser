@@ -80,8 +80,13 @@ Returns an IO object for the `click` Event. Methods of the IO Object will be cal
 Returns an IO object for the `change` Event. Methods of the IO Object will be called with `event.target.value`.
 
     IO.get(url)
-
 Returns an IO object for the get request. The value propagated is `responseText`.
+
+```
+IO.del(url)
+```
+
+Returns an IO object for the delete request. The value propagated is ```responseText```.
 
     IO.getJSON(url)
 
@@ -92,8 +97,13 @@ Returns an IO object for the get request. The value propagated is JavaScript Obj
 Returns an IO object for the get request. The value propagated is JavaScript Blob Object.
 
     IO.postJSON(url, obj)
-
 Returns an IO object for the post request. The value propagated is JavaScript Object.
+
+``````
+IO.putJSON(url, obj)
+``````
+
+Returns an IO object for the put request. The value propagated is JavaScript Object.
 
 #### Instance methods on IO Objects
 
