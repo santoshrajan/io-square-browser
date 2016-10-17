@@ -88,13 +88,20 @@ IO.del(url)
 
 Returns an IO object for the delete request. The value propagated is ```responseText```.
 
-    IO.getJSON(url)
+    IO.getBlob(url)
+Returns an IO object for the get request. The value propagated is JavaScript Blob Object.
+
+``````
+IO.getJSON(url)
+``````
 
 Returns an IO object for the get request. The value propagated is JavaScript Object.
 
-    IO.getBlob(url)
+``````
+IO.delJSON(url)
+``````
 
-Returns an IO object for the get request. The value propagated is JavaScript Blob Object.
+Returns an IO object for the delete request. The value propagated is JavaScript Object.
 
     IO.postJSON(url, obj)
 Returns an IO object for the post request. The value propagated is JavaScript Object.
