@@ -40,6 +40,14 @@ class IOBrowser extends IO {
     }).map(request => [request.response])
   }
 
+  static delJSON (url) {
+    return new IO(cb => {
+      const request = createRequest('DELETE', url, cb)
+      request.responseType = 'json'
+      request.send()
+    }).map(request => [request.response])
+  }
+
   static getBlob (url) {
     return new IO(cb => {
       const request = createRequest('GET', url, cb)
